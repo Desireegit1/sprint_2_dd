@@ -1,3 +1,35 @@
+--EJERCICO 1
+-- =========================================================
+-- Crea un Nou Projecte a Google Cloud anomenat:
+-- sprint3-analytics-[el-teu-nom].
+
+-- =========================================================
+
+  
+  gcloud auth list
+    2  gcloud projects create sprint3-analytics-desiree-diaz --name="Sprint 3 Analytics Desiree" --set-as-default
+    3  gcloud config set project sprint3-analytics-desiree-diaz
+    4  gcloud config get-value project
+
+----------------------
+
+ bq mk --dataset --location=EU --description="Capa Gold: datos agregados listos para informes y dashboards" sprint3-analytics-desiree-diaz:sprint3_gold
+    6  bq ls --project_id=sprint3-analytics-desiree-diaz
+
+
+    -------------------------------------
+
+--EJERCICO 1
+CREATE SCHEMA `sprint3-analytics-desiree-diaz.sprint3_silver`
+OPTIONS (
+location = 'EU',
+description = 'Dades netes, tipades i deduplicades'
+);
+
+
+
+
+
 --EJERCICO 2
 -- =========================================================
 -- 1. TRANSACTIONS_RAW
